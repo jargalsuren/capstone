@@ -1,5 +1,50 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-%}
-<h1 align="center">Home</h1>
-<p> This is content</p>
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+
+{% block content%}
+<br>
+<h1 align="center">Recipes</h1>
+
+<div class="wrapper">
+    <div class="cards">
+        <!-- DB: use return render_template('browse.html', videos=val) -->
+        <!-- DB: FETCH LIST OF VIDEOS TO DISPLAY, type: list of arrays -->
+        <!-- each array should details for 1 video -->
+        {% for recipe in recipes %}
+        <a class="card" href="/{{recipe.id}}">
+            <div class="card-content">
+                <div class="top">
+                    <!-- DB: DURATION OF recipe  -->
+                    <h3 class="name">{{recipe.duration}}mins</h3>
+                    <!-- DB: CAtegory -->
+                    <div class="date"><span>{{recipe.category}}</span></div>
+                </div>
+                <div class="bottom">
+                    <!-- DB: DISPLAY POSE NAME  -->
+                    <h2>{{recipe.name}}</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                            viewBox="0 0 24 24" class="bookmark-icn">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bg">
+                <!-- DB: THUMBNAIL SHOULD SHOW CLEAR POSE PICTURE -->
+                <img class="bg-img" src="{{recipe.photo }}" />
+            </div>
+            <div class="shadow">
+                <!-- DB: THE SAME THUMBNAIL HERE FOR SHADOW EFFECTS  -->
+                <img class="shadow-img" src="{{recipe.photo }}" />
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
 {% endblock %}
