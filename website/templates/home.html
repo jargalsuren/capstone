@@ -6,9 +6,8 @@
 
 <div class="wrapper">
     <div class="cards">
-        <!-- DB: use return render_template('browse.html', videos=val) -->
-        <!-- DB: FETCH LIST OF VIDEOS TO DISPLAY, type: list of arrays -->
-        <!-- each array should details for 1 video -->
+        <!-- DB: FETCH LIST OF recipe TO DISPLAY, type: list of arrays -->
+        <!-- each array should details for 1 recipe -->
         {% for recipe in recipes %}
         <a class="card" href="/{{recipe.id}}">
             <div class="card-content">
@@ -31,11 +30,9 @@
                 </div>
             </div>
             <div class="card-bg">
-                <!-- DB: THUMBNAIL SHOULD SHOW CLEAR POSE PICTURE -->
                 <img class="bg-img" src="{{recipe.photo }}" />
             </div>
             <div class="shadow">
-                <!-- DB: THE SAME THUMBNAIL HERE FOR SHADOW EFFECTS  -->
                 <img class="shadow-img" src="{{recipe.photo }}" />
             </div>
         </a>
