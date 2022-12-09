@@ -1,0 +1,11 @@
+/*file to store CSS configuration that we want consisent throughout the app pages*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import url("https://unicons.iconscout.com/release/v4.0.0/css/line.css");
+
+:root {
+    --navy: #03045e;
+    --blue: #00b4d8;
+    --lightblue: #90e0ef;
+    --fadedblue: #caf0f8;
+}

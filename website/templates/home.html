@@ -8,32 +8,25 @@
     <div class="cards">
         <!-- DB: FETCH LIST OF recipe TO DISPLAY, type: list of arrays -->
         <!-- each array should details for 1 recipe -->
-        {% for recipe in recipes %}
-        <a class="card" href="/{{recipe.id}}">
+        {% for Recipe in recipes %}
+        <a class="card" href="/{{Recipe.id}}">
             <div class="card-content">
                 <div class="top">
                     <!-- DB: DURATION OF recipe  -->
-                    <h3 class="name">{{recipe.duration}}mins</h3>
-                    <!-- DB: CAtegory -->
-                    <div class="date"><span>{{recipe.category}}</span></div>
+                    <h3 class="name">{{Recipe.duration}}mins</h3>
+                    <!-- DB: Category -->
+                    <div class="date"><span>{{Recipe.category}}</span></div>
                 </div>
                 <div class="bottom">
-                    <!-- DB: DISPLAY POSE NAME  -->
-                    <h2>{{recipe.name}}</h2>
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
-                            viewBox="0 0 24 24" class="bookmark-icn">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </div>
+                    <!-- DB: DISPLAY Recipe NAME  -->
+                    <h2>{{Recipe.name}}</h2>
                 </div>
             </div>
             <div class="card-bg">
-                <img class="bg-img" src="{{recipe.photo }}" />
+                <img class="bg-img" src="{{Recipe.photo }}" />
             </div>
             <div class="shadow">
-                <img class="shadow-img" src="{{recipe.photo }}" />
+                <img class="shadow-img" src="{{Recipe.photo }}" />
             </div>
         </a>
         {% endfor %}
